@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+}
+.list{
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 1rem;
+}
