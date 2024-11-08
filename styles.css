@@ -15,6 +15,12 @@ a {
     text-decoration: none;
     color: inherit;
 }
+.featured-products{
+    margin-top: 1.5rem;
+}
+.hero-content h1{
+    padding-top: 2rem;
+}
 
 /* Header */
 header {
@@ -49,7 +55,7 @@ nav ul li a {
 .hero {
     background-color: #d9f7d9;
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px auto;
     margin-top: 1rem;
 }
 .hero h1{
@@ -102,7 +108,15 @@ nav ul li a {
 
 .product-list {
     display: flex;
+    /* flex-wrap: nowrap; */
+    flex-direction: row;
     justify-content: space-around;
+    width: 100%;
+    
+    min-width: 300px;
+    flex-wrap: nowrap;
+
+
 }
 
 .product-card {
@@ -110,7 +124,8 @@ nav ul li a {
     padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 30%;
-    text-align: center;
+    flex-wrap: nowrap;
+    margin-bottom: 1rem;
     border-radius: 8px;
 }
 
@@ -151,3 +166,174 @@ footer {
     padding: 20px 0;
     text-align: center;
 }
+/* Media Queries with Logic */
+
+/* For Tablets and Mobile Landscape */
+@media (max-width: 1024px) and (min-width: 768px) {
+    /* Logic: When the screen is between 768px and 1024px (Tablet Size) */
+    header {
+      padding: 20px;
+    }
+  
+    header h1 {
+      font-size: 1.6rem;
+    }
+  
+    main {
+      flex-direction: column;
+      margin: 15px;
+    }
+  
+    .main-content {
+      margin-right: 0;
+    }
+  
+    .sidebar {
+      margin-top: 20px;
+    }
+  }
+  
+  /* For Mobile Portrait */
+  @media (max-width: 768px) and (orientation: portrait) {
+    /* Logic: When screen width is less than 768px and the device is in portrait orientation */
+    header {
+      padding: 10px;
+    }
+  
+    header h1 {
+      font-size: 1.4rem;
+    }
+  
+    header nav ul {
+      text-align: center;
+    }
+  
+    header nav ul li {
+      display: inline-block;
+      margin: 5px;
+    }
+  
+    .main-content {
+      padding: 15px;
+    }
+  
+    .sidebar {
+      padding: 15px;
+      margin-top: 15px;
+    }
+  
+    footer {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* For Small Mobile (<= 480px) */
+  @media (max-width: 480px) {
+    /* Logic: When screen width is less than or equal to 480px (Very small screens like phones) */
+    header {
+      padding: 5px;
+    }
+  
+    header h1 {
+      font-size: 1.2rem;
+    }
+  
+    header nav ul {
+      text-align: center;
+    }
+  
+    header nav ul li {
+      display: block;
+      margin: 8px 0;
+    }
+    .hero-content{
+        
+        margin-bottom: 1rem;
+    }
+    .hero-content button{
+        margin-bottom: 0.5rem;
+    }
+  .featured-products h2{
+    margin-top: 2.5rem;
+  }
+    .main-content {
+      padding: 10px;
+    }
+  
+    .sidebar {
+      padding: 10px;
+      margin-top: 10px;
+    }
+  
+    footer {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* For Desktop (>= 1200px) */
+  @media (min-width: 1200px) {
+    /* Logic: When screen width is greater than or equal to 1200px (Desktop size) */
+    main {
+      justify-content: space-between;
+      margin: 30px;
+    }
+  
+    .main-content {
+      flex: 3;
+      margin-right: 30px;
+    }
+  
+    .sidebar {
+      flex: 1;
+    }
+  
+    footer {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .hero{
+        padding-left: 0;
+    }
+    .hero-content h1{
+        margin-left: 0;
+        overflow-x: hidden;
+    }
+    .hero-content p{
+        margin-left: 0;
+        overflow-x: hidden;
+    }
+
+  }
+
+  @media  (max-width:900px) {
+    .product-list{
+       
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .product-card{
+        width: 60%;
+        flex-shrink: 0;
+
+
+    }
+   
+    
+  }
+  @media (max-width:400px) {
+    .product-card{
+        width: 80%;
+
+    }
+    
+  }
+  @media (max-width:480px) {
+    a{
+        margin-left: 0.5rem;
+    }
+    
+  }
